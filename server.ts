@@ -8,10 +8,10 @@ const app = Fastify({
   logger: true,
 });
 
-const appService = require("./dist/app.js");
+const appService = require("./src/app.ts");
 app.register(appService);
 
-app.listen({ port: process.env.PORT || 4000 }, (err) => {
+app.listen({ port: process.env.PORT || 4000 }, (err: any) => {
   if (err) {
     app.log.error(err);
     process.exit(1);
